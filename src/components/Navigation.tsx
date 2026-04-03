@@ -11,7 +11,7 @@ const links = [
   { label: "Contact", href: "#contact" },
 ];
 
-export function Navigation({ visible = true }: { visible?: boolean }) {
+export function Navigation() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -24,9 +24,8 @@ export function Navigation({ visible = true }: { visible?: boolean }) {
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: visible ? 1 : 0, y: visible ? 0 : -20 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      style={{ pointerEvents: visible ? "auto" : "none" }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-[#060608]/90 backdrop-blur-xl border-b border-white/[0.04]"

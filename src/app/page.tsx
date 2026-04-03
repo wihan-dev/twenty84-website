@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-import { Onboarding } from "@/components/Onboarding";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
@@ -12,14 +8,9 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
-  const [onboardingComplete, setOnboardingComplete] = useState(false);
-
   return (
     <>
-      {!onboardingComplete && (
-        <Onboarding onComplete={() => setOnboardingComplete(true)} />
-      )}
-      <Navigation visible={onboardingComplete} />
+      <Navigation />
       <main>
         <Hero />
         <About />

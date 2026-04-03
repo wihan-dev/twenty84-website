@@ -21,7 +21,6 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on resize to desktop
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth >= 768) setOpen(false);
@@ -41,16 +40,16 @@ export function Navigation() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 h-14 sm:h-16 md:h-20 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5 sm:gap-3 group py-2">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 h-16 sm:h-18 md:h-22 flex items-center justify-between">
+        <a href="#" className="flex items-center gap-3 sm:gap-3.5 group py-2">
           <Image
             src="/logo-white.png"
             alt="Twenty84"
-            width={32}
-            height={32}
-            className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 sm:w-9 sm:h-9"
+            width={42}
+            height={42}
+            className="opacity-85 group-hover:opacity-100 transition-opacity duration-300 w-[42px] h-[42px] sm:w-[48px] sm:h-[48px] md:w-[52px] md:h-[52px]"
           />
-          <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.35em] text-white/70 uppercase hidden sm:inline">
+          <span className="font-mono text-[13px] sm:text-[14px] md:text-[15px] tracking-[0.3em] text-white/80 uppercase">
             Twenty84
           </span>
         </a>
@@ -77,7 +76,7 @@ export function Navigation() {
           </a>
         </div>
 
-        {/* Mobile toggle — 44px touch target */}
+        {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden relative w-11 h-11 flex items-center justify-center -mr-1.5"

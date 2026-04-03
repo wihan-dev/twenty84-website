@@ -16,7 +16,7 @@ export function Stats() {
         <div className="relative border-y border-white/[0.05] py-10 sm:py-14 md:py-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-y-12">
             {stats.map((stat, i) => (
-              <FadeIn key={stat.label} delay={i * 0.08}>
+              <FadeIn key={stat.label} delay={i * 0.12} anim="blur-scale" duration={0.8}>
                 <div className="relative text-center group">
                   {i > 0 && (
                     <div className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-px bg-white/[0.05] hidden md:block" />

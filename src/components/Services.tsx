@@ -1,6 +1,6 @@
 "use client";
 
-import { FadeIn } from "./FadeIn";
+import { FadeIn, TextReveal, LineReveal } from "./FadeIn";
 
 const services = [
   {
@@ -37,19 +37,23 @@ export function Services() {
   return (
     <section id="services" className="py-20 sm:py-36 md:py-48 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12">
-        <FadeIn>
+        <FadeIn anim="blur-up" duration={0.7}>
           <p className="font-mono text-[10px] tracking-[0.4em] uppercase text-white/20 mb-4 sm:mb-5">
             What We Do
           </p>
-          <h2 className="text-[clamp(1.75rem,5vw,4rem)] font-extralight tracking-tight text-white/85 leading-[1.15] max-w-2xl mb-12 sm:mb-20 md:mb-28">
-            Capital, systems, and AI
-            <span className="text-white/25"> under one roof.</span>
-          </h2>
         </FadeIn>
+        <LineReveal className="mb-8 sm:mb-10 max-w-xs" delay={0.1} />
+        <TextReveal
+          as="h2"
+          delay={0.15}
+          className="text-[clamp(1.75rem,5vw,4rem)] font-extralight tracking-tight text-white/85 leading-[1.15] max-w-2xl mb-12 sm:mb-20 md:mb-28"
+        >
+          Capital, systems, and AI under one roof.
+        </TextReveal>
 
         <div className="space-y-0">
           {services.map((service, i) => (
-            <FadeIn key={service.title} delay={i * 0.08}>
+            <FadeIn key={service.title} delay={i * 0.1} anim="slide-right" duration={0.8}>
               <div className="group grid md:grid-cols-12 gap-4 sm:gap-6 md:gap-10 py-8 sm:py-10 md:py-14 border-t border-white/[0.05] first:border-t-0">
                 {/* Number + Title */}
                 <div className="md:col-span-4 flex items-start gap-3 sm:gap-4">

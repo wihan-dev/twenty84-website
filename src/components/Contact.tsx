@@ -4,47 +4,97 @@ import { FadeIn } from "./FadeIn";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-32 md:py-40">
+    <section id="contact" className="py-36 md:py-48">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="gradient-line mb-20" />
+        <div className="relative">
+          {/* Ambient glow */}
+          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse,_rgba(40,80,160,0.03)_0%,_transparent_70%)] pointer-events-none" />
 
-        <div className="max-w-2xl">
-          <FadeIn>
-            <p className="font-mono text-[11px] tracking-[0.3em] uppercase text-white/25 mb-4">
-              Contact
-            </p>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight text-white/90 leading-[1.2]">
-              Let&apos;s build
-              <br />
-              <span className="text-white/35">something together.</span>
-            </h2>
-          </FadeIn>
+          <div className="relative grid lg:grid-cols-2 gap-20 lg:gap-32">
+            {/* Left — heading */}
+            <div>
+              <FadeIn>
+                <p className="font-mono text-[10px] tracking-[0.4em] uppercase text-white/20 mb-5">
+                  Contact
+                </p>
+                <h2 className="text-[clamp(2rem,5vw,4rem)] font-extralight tracking-tight text-white/85 leading-[1.15]">
+                  Let&apos;s build
+                  <span className="text-white/25"> something together.</span>
+                </h2>
+              </FadeIn>
 
-          <FadeIn delay={0.2}>
-            <p className="mt-8 text-base md:text-lg text-white/30 leading-relaxed max-w-md">
-              Whether you&apos;re looking for a growth partner, need AI implementation,
-              or want to explore what&apos;s possible — we&apos;d like to hear from you.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={0.3}>
-            <div className="mt-12 flex flex-col sm:flex-row gap-4">
-              <a
-                href="mailto:hello@twenty84.ai"
-                className="inline-flex items-center justify-center text-sm tracking-wide bg-white/[0.06] hover:bg-white/[0.10] text-white/70 hover:text-white/90 px-8 py-3.5 rounded-full transition-all duration-300 border border-white/[0.06]"
-              >
-                hello@twenty84.ai
-              </a>
-              <a
-                href="https://www.twenty84.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center text-sm tracking-wide text-white/40 hover:text-white/70 px-8 py-3.5 transition-colors duration-300"
-              >
-                www.twenty84.ai
-              </a>
+              <FadeIn delay={0.15}>
+                <p className="mt-8 text-base md:text-[17px] text-white/25 leading-relaxed max-w-md font-light">
+                  Whether you&apos;re looking for a growth partner, need AI
+                  implementation, or want to explore what&apos;s possible —
+                  we&apos;d like to hear from you.
+                </p>
+              </FadeIn>
             </div>
-          </FadeIn>
+
+            {/* Right — CTAs */}
+            <div className="flex flex-col justify-center">
+              <FadeIn delay={0.2}>
+                <div className="space-y-4">
+                  <a
+                    href="mailto:hello@twenty84.ai"
+                    className="group flex items-center justify-between p-6 rounded-xl border border-white/[0.04] hover:border-white/[0.10] bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-500"
+                  >
+                    <div>
+                      <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-white/15 mb-1">
+                        Email
+                      </p>
+                      <p className="text-base text-white/60 group-hover:text-white/85 transition-colors duration-300">
+                        hello@twenty84.ai
+                      </p>
+                    </div>
+                    <svg
+                      className="w-4 h-4 text-white/15 group-hover:text-white/40 transition-all duration-300 group-hover:translate-x-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                      />
+                    </svg>
+                  </a>
+
+                  <a
+                    href="https://www.twenty84.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-between p-6 rounded-xl border border-white/[0.04] hover:border-white/[0.10] bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-500"
+                  >
+                    <div>
+                      <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-white/15 mb-1">
+                        Website
+                      </p>
+                      <p className="text-base text-white/60 group-hover:text-white/85 transition-colors duration-300">
+                        www.twenty84.ai
+                      </p>
+                    </div>
+                    <svg
+                      className="w-4 h-4 text-white/15 group-hover:text-white/40 transition-all duration-300 group-hover:translate-x-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </FadeIn>
+            </div>
+          </div>
         </div>
       </div>
     </section>

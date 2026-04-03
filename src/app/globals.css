@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
+  --background: #060608;
   --foreground: #e5e5e5;
   --accent: #a3a3a3;
   --muted: #525252;
-  --border: #1a1a1a;
-  --surface: #111111;
+  --border: #141416;
+  --surface: #0c0c0e;
 }
 
 @theme inline {
@@ -22,7 +22,7 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #262626 transparent;
+  scrollbar-color: #1a1a1c transparent;
 }
 
 html {
@@ -36,7 +36,7 @@ body {
 }
 
 ::selection {
-  background: #ffffff20;
+  background: rgba(100, 140, 220, 0.2);
   color: #ffffff;
 }
 
@@ -47,17 +47,17 @@ body {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.03;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Gradient line */
-.gradient-line {
+/* Section dividers */
+.section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #525252, transparent);
-}
-
-/* Subtle glow */
-.glow {
-  box-shadow: 0 0 80px rgba(255, 255, 255, 0.03);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.04),
+    transparent
+  );
 }

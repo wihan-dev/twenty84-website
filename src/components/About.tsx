@@ -31,50 +31,62 @@ const principles = [
 
 export function About() {
   return (
-    <section id="about" className="py-32 md:py-40">
+    <section id="about" className="relative py-36 md:py-48">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="gradient-line mb-20" />
-
-        <div className="grid md:grid-cols-12 gap-16">
-          <div className="md:col-span-5">
-            <FadeIn>
-              <p className="font-mono text-[11px] tracking-[0.3em] uppercase text-white/25 mb-4">
-                About
-              </p>
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight text-white/90 leading-[1.2]">
-                More than investors.
-                <br />
-                <span className="text-white/35">More than operators.</span>
-              </h2>
-            </FadeIn>
-
-            <FadeIn delay={0.2}>
-              <p className="mt-8 text-base md:text-lg text-white/35 leading-relaxed max-w-md">
-                Most investors don&apos;t help operationally. Most agencies don&apos;t have
-                ownership or alignment. Twenty84 fills that gap — we take equity,
-                bring systems, and build alongside the founders we partner with.
-              </p>
-            </FadeIn>
+        {/* Section header */}
+        <FadeIn>
+          <div className="mb-20 md:mb-28">
+            <p className="font-mono text-[10px] tracking-[0.4em] uppercase text-white/20 mb-5">
+              About
+            </p>
+            <h2 className="text-[clamp(2rem,5vw,4rem)] font-extralight tracking-tight text-white/85 leading-[1.15] max-w-3xl">
+              More than investors.
+              <span className="text-white/25"> More than operators.</span>
+            </h2>
           </div>
+        </FadeIn>
 
-          <div className="md:col-span-7">
-            <div className="grid sm:grid-cols-2 gap-8">
-              {principles.map((p, i) => (
-                <FadeIn key={p.number} delay={i * 0.1}>
-                  <div className="group">
-                    <span className="font-mono text-[11px] text-white/15 tracking-wider">
+        {/* Two-column layout */}
+        <div className="grid lg:grid-cols-2 gap-20 lg:gap-32">
+          {/* Left — manifesto */}
+          <FadeIn delay={0.15}>
+            <div className="relative">
+              <div className="absolute -left-6 top-0 bottom-0 w-px bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-transparent hidden lg:block" />
+              <blockquote className="text-lg md:text-xl text-white/30 leading-relaxed font-light">
+                Most investors don&apos;t help operationally. Most agencies
+                don&apos;t have ownership or alignment. Twenty84 fills that gap —
+                we take equity, bring systems, and build alongside the founders
+                we partner with.
+              </blockquote>
+              <div className="mt-8 flex items-center gap-3">
+                <div className="w-8 h-px bg-white/10" />
+                <p className="text-[12px] font-mono tracking-wide text-white/15">
+                  The gap we fill
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Right — principle cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-12">
+            {principles.map((p, i) => (
+              <FadeIn key={p.number} delay={0.1 + i * 0.08}>
+                <div className="group">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="font-mono text-[10px] text-white/12 tracking-wider">
                       {p.number}
                     </span>
-                    <h3 className="mt-3 text-base font-medium text-white/70 group-hover:text-white/90 transition-colors">
-                      {p.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-white/25 leading-relaxed">
-                      {p.description}
-                    </p>
+                    <div className="h-px flex-1 bg-white/[0.04] group-hover:bg-white/[0.08] transition-colors duration-500" />
                   </div>
-                </FadeIn>
-              ))}
-            </div>
+                  <h3 className="text-[15px] font-medium text-white/60 group-hover:text-white/85 transition-colors duration-300 mb-2">
+                    {p.title}
+                  </h3>
+                  <p className="text-[13px] text-white/20 leading-relaxed">
+                    {p.description}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </div>

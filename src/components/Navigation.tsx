@@ -21,6 +21,15 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close mobile menu on resize to desktop
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 768) setOpen(false);
+    };
+    window.addEventListener("resize", onResize, { passive: true });
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
@@ -32,16 +41,16 @@ export function Navigation() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 md:h-20 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3 group">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 h-14 sm:h-16 md:h-20 flex items-center justify-between">
+        <a href="#" className="flex items-center gap-2.5 sm:gap-3 group py-2">
           <Image
             src="/logo-white.png"
             alt="Twenty84"
-            width={36}
-            height={36}
-            className="opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+            width={32}
+            height={32}
+            className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 sm:w-9 sm:h-9"
           />
-          <span className="font-mono text-[11px] tracking-[0.35em] text-white/70 uppercase hidden sm:inline">
+          <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.35em] text-white/70 uppercase hidden sm:inline">
             Twenty84
           </span>
         </a>
@@ -68,10 +77,10 @@ export function Navigation() {
           </a>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile toggle — 44px touch target */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden relative w-8 h-8 flex items-center justify-center"
+          className="md:hidden relative w-11 h-11 flex items-center justify-center -mr-1.5"
           aria-label="Menu"
         >
           <span
@@ -90,23 +99,23 @@ export function Navigation() {
           animate={{ opacity: 1, height: "auto" }}
           className="md:hidden border-t border-white/[0.04] bg-[#060608]/95 backdrop-blur-xl"
         >
-          <div className="px-6 py-8 flex flex-col gap-1">
+          <div className="px-5 sm:px-6 py-6 flex flex-col gap-1">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-lg text-white/40 hover:text-white/80 transition-colors py-2"
+                className="text-base text-white/45 hover:text-white/80 active:text-white/80 transition-colors py-2.5"
               >
                 {link.label}
               </a>
             ))}
-            <div className="h-px bg-white/[0.06] my-3" />
+            <div className="h-px bg-white/[0.06] my-2" />
             <a
               href="https://twenty84.beehiiv.com/subscribe"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-white/40 hover:text-white/80 transition-colors py-2"
+              className="text-base text-white/45 hover:text-white/80 active:text-white/80 transition-colors py-2.5"
             >
               Newsletter
             </a>

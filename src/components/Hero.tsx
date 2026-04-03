@@ -1,10 +1,34 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect, useCallback } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Force autoplay on mobile — React's muted attr doesn't always
+  // set the DOM property, which blocks autoplay on iOS/Android.
+  const tryPlay = useCallback(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.playsInline = true;
+    v.play().catch(() => {
+      // Still blocked — retry on first user interaction
+      const kick = () => {
+        v.play().catch(() => {});
+        window.removeEventListener("touchstart", kick);
+        window.removeEventListener("scroll", kick);
+      };
+      window.addEventListener("touchstart", kick, { once: true });
+      window.addEventListener("scroll", kick, { once: true });
+    });
+  }, []);
+
+  useEffect(() => {
+    tryPlay();
+  }, [tryPlay]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -29,10 +53,16 @@ export function Hero() {
           style={{ scale: videoScale, opacity: videoOpacity }}
           className="absolute inset-0 origin-center"
         >
+          {/* Fallback gradient for when video can't play */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628] via-[#060608] to-[#060608]" />
           <video
+            ref={videoRef}
             autoPlay
             muted
             playsInline
+            preload="auto"
+            // eslint-disable-next-line react/no-unknown-property
+            webkit-playsinline=""
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source src="/videos/transition-1-2.mp4" type="video/mp4" />

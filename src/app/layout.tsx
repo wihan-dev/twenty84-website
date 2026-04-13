@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Twenty84 — Capital. Systems. AI.",
+  title: "Twenty84",
   description:
-    "We partner with businesses to grow them using capital, operational systems, and AI. Building Africa's future, one venture at a time.",
+    "Twenty84 invests in future-defining technology companies.",
 };
 
 export default function RootLayout({
@@ -24,11 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="noise min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+      <body className="noise min-h-full flex flex-col bg-[#0a0a0f] text-white font-[family-name:var(--font-inter)]">
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,62 +1,48 @@
 "use client";
 
+import { FadeIn } from "./FadeIn";
+
 export function Footer() {
   return (
     <footer className="border-t border-white/[0.04]">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 py-10 sm:py-14 md:py-20">
-        <div className="grid sm:grid-cols-2 md:grid-cols-12 gap-8 sm:gap-10 md:gap-0">
-          {/* Brand */}
-          <div className="md:col-span-4">
-            <p className="font-mono text-[11px] tracking-[0.35em] text-white/25 uppercase">
-              Twenty84
-            </p>
-            <p className="mt-2 sm:mt-3 text-[13px] text-white/18 leading-relaxed max-w-xs">
-              Capital. Systems. AI. Built for Africa.
-            </p>
-          </div>
-
-          {/* Navigation */}
-          <div className="md:col-span-4 md:col-start-6">
-            <div className="grid grid-cols-2 gap-y-3">
-              {[
-                { label: "About", href: "#about" },
-                { label: "Services", href: "#services" },
-                { label: "Portfolio", href: "#portfolio" },
-                { label: "Contact", href: "#contact" },
-              ].map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-[13px] text-white/25 hover:text-white/50 active:text-white/50 transition-colors duration-300 py-1"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Newsletter */}
-          <div className="md:col-span-3 md:col-start-10 flex md:justify-end items-start">
-            <a
-              href="https://twenty84.beehiiv.com/subscribe"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[12px] tracking-wide text-white/25 hover:text-white/50 active:text-white/50 transition-colors duration-300 border-b border-white/[0.08] hover:border-white/[0.15] pb-0.5 py-1"
-            >
-              Subscribe to newsletter
-            </a>
-          </div>
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 py-14 sm:py-20">
+        <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16">
+          <FadeIn anim="blur-up" duration={1}>
+            <div className="mb-8 sm:mb-10" />
+          </FadeIn>
+          <FadeIn anim="blur-up" duration={1} delay={0.1}>
+            <blockquote className="text-[14px] sm:text-[15px] md:text-base text-white/25 leading-relaxed italic font-light px-4">
+              &ldquo;The kingdom of heaven is like a mustard seed, which a man took and planted in his field. Though it is the smallest of all seeds, yet when it grows, it is the largest of garden plants and becomes a tree, so that the birds come and perch in its branches.&rdquo;
+            </blockquote>
+            <p className="mt-4 text-[11px] font-mono tracking-wide text-white/15">Matthew 13:31-32</p>
+          </FadeIn>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-10 sm:mt-16 pt-6 sm:pt-8 border-t border-white/[0.04] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
-          <p className="text-[11px] text-white/15">
-            &copy; {new Date().getFullYear()} Twenty84ai (Pty) Ltd. All rights
-            reserved.
-          </p>
-          <p className="text-[11px] text-white/15">
-            Johannesburg, South Africa
-          </p>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-8 border-t border-white/[0.04]">
+          <div>
+            <p className="font-mono text-[11px] tracking-[0.3em] text-white/20 uppercase">
+              Twenty84
+            </p>
+            <p className="mt-1 text-[11px] text-white/12">
+              &copy; {new Date().getFullYear()} Twenty84ai (Pty) Ltd. All rights reserved.
+            </p>
+          </div>
+          <div className="flex items-center gap-4 sm:gap-6">
+            {[
+              { label: "Home", href: "#" },
+              { label: "Thesis", href: "#thesis" },
+              { label: "Investment", href: "#investment" },
+              { label: "Contact", href: "#contact" },
+            ].map((link) => (
+              <a
+                key={link.href + link.label}
+                href={link.href}
+                className="text-[12px] text-white/20 hover:text-white/45 transition-colors duration-300 py-1"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

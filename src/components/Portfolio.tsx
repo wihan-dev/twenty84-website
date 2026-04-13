@@ -48,7 +48,7 @@ export function Portfolio() {
           delay={0.15}
           className="text-[clamp(1.75rem,5vw,4rem)] font-extralight tracking-tight text-white/85 leading-[1.15] max-w-2xl mb-12 sm:mb-20 md:mb-28"
         >
-          Businesses we&apos;re building alongside.
+          Businesses we&apos;re building alongside
         </TextReveal>
 
         <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">

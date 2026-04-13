@@ -7,17 +7,17 @@ const principles = [
   {
     title: "People first",
     description:
-      "Everything starts with the person. We invest in people before we invest in businesses. Relationships, integrity, and trust are non-negotiable \u2014 we back operators we believe in and build alongside them for the long term.",
+      "Everything starts with the person. We invest in people before we invest in businesses. Relationships, integrity, and trust are non-negotiable. We back operators we believe in and build alongside them for the long term.",
   },
   {
     title: "We fit in where we\u2019re needed",
     description:
-      "We tailor our involvement to what the business actually needs. Sometimes that\u2019s just capital. Sometimes it\u2019s a small stake and light guidance. Sometimes we roll up our sleeves and become full partners. There\u2019s no formula \u2014 just what works.",
+      "We tailor our involvement to what the business actually needs. Sometimes that\u2019s just capital. Sometimes it\u2019s a small stake and light guidance. Sometimes we roll up our sleeves and become full partners. There\u2019s no formula, just what works.",
   },
   {
     title: "Spread the light",
     description:
-      "We exist to create opportunity for people who would otherwise be held back. More jobs, more growth, more capability. Africa and emerging markets can\u2019t afford to be left behind \u2014 and with the right execution, they won\u2019t be.",
+      "We exist to create opportunity for people who would otherwise be held back. More jobs, more growth, more capability. Africa and emerging markets can\u2019t afford to be left behind, and with the right execution, they won\u2019t be.",
   },
 ];
 

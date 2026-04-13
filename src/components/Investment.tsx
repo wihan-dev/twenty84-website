@@ -7,19 +7,19 @@ const pillars = [
     number: "01",
     title: "Capital",
     description:
-      "We invest capital into businesses that need it to grow. Smart, targeted capital allocated to the highest-leverage areas \u2014 whether that\u2019s expansion, inventory, hiring, or product development. Our capital is designed to accelerate growth, not just extend runway.",
+      "We invest capital into businesses that need it to grow. Smart, targeted capital allocated to the highest-leverage areas, whether that\u2019s expansion, inventory, hiring, or product development. Our capital is designed to accelerate growth, not just extend runway.",
   },
   {
     number: "02",
     title: "Consulting & Operations",
     description:
-      "Through our consulting arm, we help operators get their structures and systems right so they can scale. Finance, operations, workflows, AI implementation \u2014 we work hands-on to build the infrastructure that turns a good business into a great one.",
+      "Through our consulting arm, we help operators get their structures and systems right so they can scale. Finance, operations, workflows, AI implementation. We work hands-on to build the infrastructure that turns a good business into a great one.",
   },
   {
     number: "03",
     title: "Distribution & Brand (Studio 84)",
     description:
-      "Through Studio 84, our marketing and brand division, we help portfolio companies grow their presence \u2014 marketing, ads, content, websites, and brand strategy. We help businesses look and operate at a premium standard, and actually reach the customers they deserve.",
+      "Through Studio 84, our marketing and brand division, we help portfolio companies grow their presence. Marketing, ads, content, websites, and brand strategy. We help businesses look and operate at a premium standard, and actually reach the customers they deserve.",
   },
 ];
 
@@ -27,7 +27,7 @@ const mandateCards = [
   {
     title: "Cash-Generative Physical Businesses",
     description:
-      "Businesses rooted in real-world activity \u2014 retail, services, property, hospitality. Things people will always need, with a natural moat against disruption. We layer on systems, brand, and smart capital to accelerate what\u2019s already working.",
+      "Businesses rooted in real-world activity: retail, services, property, hospitality. Things people will always need, with a natural moat against disruption. We layer on systems, brand, and smart capital to accelerate what\u2019s already working.",
   },
   {
     title: "Tech & AI Businesses",
